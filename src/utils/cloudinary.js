@@ -15,7 +15,7 @@ const uploadOnCloudinary = async (localFilePath) => {
       resource_type: "auto",
     });
 
-    console.log("File is uploaded on Cloudinary");
+    console.log("File is uploaded on Cloudinary: ", response.url);
     return response;
     
   } catch (error) {
@@ -24,13 +24,15 @@ const uploadOnCloudinary = async (localFilePath) => {
   }
 };
 
-cloudinary.uploader
-  .upload(
-    "https://res.cloudinary.com/demo/image/upload/getting-started/shoes.jpg",
-    {
-      public_id: "shoes",
-    }
-  )
-  .catch((error) => {
-    console.log(error);
-  });
+export { uploadOnCloudinary }
+
+// cloudinary.uploader
+//   .upload(
+//     "https://res.cloudinary.com/demo/image/upload/getting-started/shoes.jpg",
+//     {
+//       public_id: "shoes",
+//     }
+//   )
+//   .catch((error) => {
+//     console.log(error);
+//   });

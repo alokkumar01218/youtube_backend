@@ -18,8 +18,20 @@ app.use(
 );
 
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
-
 app.use(express.static("public"));
-
 app.use(cookieParser());
+
+//routes import 
+// you can give any random name only when it is export default
+import userRouter from "./routes/user.routes.js"
+
+
+// routes usage
+app.use('/api/v1/users', userRouter)
+
+
+
+
+
+
 export default app;
